@@ -95,6 +95,7 @@ body {
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
+    
 }
 
 .header-item:not(:last-child) {
@@ -127,6 +128,7 @@ body {
 }
 
 .header-link {
+    
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -158,7 +160,23 @@ body {
 }
 
 .header-list .header-link.current {
+    
     color: var(--accent-color);
+}
+
+.header-item {
+    position: relative;
+}
+
+.current::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
 }
 
 /*------------------ Hero-------------- */
@@ -286,11 +304,14 @@ body {
 
 .works-list {
     display: flex;
-    flex-wrap: wrap;
 }
 
-.works-item + .works-item {
-    margin-left: 30px;
+.works-item {
+    margin-right: 30px;
+}
+
+.works-item:last-child {
+    margin-right: 0;
 }
 
 .works-title {
@@ -304,6 +325,36 @@ body {
     text-align: center;
     letter-spacing: 0.03em;
 }
+
+.works-item {
+    position: relative;
+}
+
+.works-product {
+    display: block;
+    position: absolute;
+    width: 370px;
+    height: 70px;
+    left: 0;
+    bottom: 0;
+    background: rgba(47, 48, 58, 0.8);
+   
+}
+
+.works-product-name {
+    padding-top: 27px;
+    padding-bottom: 27px;
+
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+
 
 /* ------------------Our team-------------------------- */
 
